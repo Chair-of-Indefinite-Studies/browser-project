@@ -23,6 +23,7 @@ describe('browser-project:app', function () {
       '.editorconfig',
       '.jshintrc',
       'README.md',
+      'LICENSE'
     ]);
   });
 });

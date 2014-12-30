@@ -55,6 +55,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_README.md'),
         this.destinationPath('README.md')
       );
+      this.fs.copy(
+        this.templatePath('LICENSE'),
+        this.destinationPath('LICENSE')
+      );
     }
   },
 
