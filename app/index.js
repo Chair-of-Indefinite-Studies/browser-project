@@ -40,6 +40,14 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json')
       );
+      this.fs.copy(
+        this.templatePath('SpecRunner.html'),
+        this.destinationPath('SpecRunner.html')
+      );
+      this.fs.copy(
+        this.templatePath('setupSpec.js'),
+        this.destinationPath('spec/setupSpec.js')
+      );
     },
 
     projectfiles: function () {
@@ -58,6 +66,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('LICENSE'),
         this.destinationPath('LICENSE')
+      );
+      this.fs.copy(
+        this.templatePath('.gitignore'),
+        this.destinationPath('.gitignore')
       );
     }
   },

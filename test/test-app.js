@@ -23,7 +23,10 @@ describe('browser-project:app', function () {
       '.editorconfig',
       '.jshintrc',
       'README.md',
-      'LICENSE'
+      'LICENSE',
+      '.gitignore',
+      'SpecRunner.html',
+      'spec/setupSpec.js'
     ]);
   });
 });

@@ -1,6 +1,18 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {},
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "SpecRunner.html",
+    "spec",
+    "package.json",
+    "gulpFile.js"
+  ],
+  "devDependencies": {
+    "jasmine": "~2.1.3"
+  }
 }
-
