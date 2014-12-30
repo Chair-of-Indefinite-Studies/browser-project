@@ -31,12 +31,18 @@ module.exports = yeoman.generators.Base.extend({
       name: 'version',
       message: 'What version should the project be on?',
       default: '1.0.0'
+    },{
+      type: 'input',
+      name: 'namespace',
+      message: 'What namespace should be exposed?',
+      default: 'test'
     }];
 
     this.prompt(prompts, function (props) {
       this.name = props.name;
       this.description = props.description;
       this.version = props.version;
+      this.namespace = props.namespace;
 
       done();
     }.bind(this));
@@ -61,6 +67,11 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('setupSpec.js'),
         this.destinationPath('spec/setupSpec.js')
+      );
+      this.fs.copyTpl(
+        this.templatePath('namespace.js'),
+        this.destinationPath(this.name + '.js'),
+        { namespace: this.namespace, description: this.description }
       );
     },
 

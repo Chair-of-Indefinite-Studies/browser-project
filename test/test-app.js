@@ -13,7 +13,8 @@ describe('browser-project:app', function () {
       .withPrompt({
         name: 'test-project',
         description: 'test description',
-        version: '3.2.1'
+        version: '3.2.1',
+        namespace: 'test'
       })
       .on('end', done);
   });
@@ -28,7 +29,8 @@ describe('browser-project:app', function () {
       'LICENSE',
       '.gitignore',
       'SpecRunner.html',
-      'spec/setupSpec.js'
+      'spec/setupSpec.js',
+      'test-project.js'
     ]);
   });
 
