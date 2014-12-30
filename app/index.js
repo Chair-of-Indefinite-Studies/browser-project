@@ -17,14 +17,26 @@ module.exports = yeoman.generators.Base.extend({
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'input',
+      name: 'name',
+      message: 'What is the name of the project?',
+      default: 'change-me'
+    },{
+      type: 'input',
+      name: 'description',
+      message: 'How would you describe the project?',
+      default: 'Supercalifragilisticexpialidocious'
+    },{
+      type: 'input',
+      name: 'version',
+      message: 'What version should the project be on?',
+      default: '1.0.0'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.name = props.name;
+      this.description = props.description;
+      this.version = props.version;
 
       done();
     }.bind(this));
@@ -32,13 +44,15 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('_package.json'),
-        this.destinationPath('package.json')
+        this.destinationPath('package.json'),
+        { name: this.name, version: this.version }
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
+        this.destinationPath('bower.json'),
+        { name: this.name, version: this.version }
       );
       this.fs.copy(
         this.templatePath('SpecRunner.html'),
@@ -59,9 +73,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('_README.md'),
-        this.destinationPath('README.md')
+        this.destinationPath('README.md'),
+        { name: this.name, description: this.description }
       );
       this.fs.copy(
         this.templatePath('LICENSE'),

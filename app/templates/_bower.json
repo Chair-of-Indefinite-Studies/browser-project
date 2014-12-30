@@ -1,7 +1,6 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {},
+  "name": "<%= name %>",
+  "version": "<%= version %>",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -12,6 +11,7 @@
     "package.json",
     "gulpFile.js"
   ],
+  "dependencies": {},
   "devDependencies": {
     "jasmine": "~2.1.3"
   }

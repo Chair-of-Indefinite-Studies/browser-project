@@ -11,7 +11,9 @@ describe('browser-project:app', function () {
       .inDir(path.join(os.tmpdir(), './temp-test'))
       .withOptions({ 'skip-install': true })
       .withPrompt({
-        someOption: true
+        name: 'test-project',
+        description: 'test description',
+        version: '3.2.1'
       })
       .on('end', done);
   });
@@ -28,5 +30,21 @@ describe('browser-project:app', function () {
       'SpecRunner.html',
       'spec/setupSpec.js'
     ]);
+  });
+
+  it('creates README with correct content', function () {
+    assert.fileContent('README.md', /test-project/);
+    assert.fileContent('README.md', /test description/);
+  });
+
+  it('creates package.json with correct content', function () {
+    assert.fileContent('package.json', /"name":\s+"test-project"/);
+    assert.fileContent('package.json', /"version":\s+"3.2.1"/);
+  });
+
+  it('creates bower.json with correct content', function () {
+    assert.fileContent('bower.json', /"name":\s+"test-project"/);
+    assert.fileContent('bower.json', /"version":\s+"3.2.1"/);
+    assert.fileContent('bower.json', /"license":\s+"MIT"/);
   });
 });
