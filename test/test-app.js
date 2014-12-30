@@ -21,7 +21,8 @@ describe('browser-project:app', function () {
       'bower.json',
       'package.json',
       '.editorconfig',
-      '.jshintrc'
+      '.jshintrc',
+      'README.md',
     ]);
   });
 });
