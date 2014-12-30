@@ -97,6 +97,11 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('.gitignore'),
         this.destinationPath('.gitignore')
       );
+      this.fs.copyTpl(
+        this.templatePath('_gulpFile.js'),
+        this.destinationPath('gulpFile.js'),
+        { name: this.name }
+      );
     }
   },
 

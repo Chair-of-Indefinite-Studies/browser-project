@@ -30,7 +30,8 @@ describe('browser-project:app', function () {
       '.gitignore',
       'SpecRunner.html',
       'spec/setupSpec.js',
-      'test-project.js'
+      'test-project.js',
+      'gulpFile.js'
     ]);
   });
 
