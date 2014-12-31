@@ -35,7 +35,7 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'namespace',
       message: 'What namespace should be exposed?',
-      default: 'test'
+      default: 'ns'
     }];
 
     this.prompt(prompts, function (props) {
