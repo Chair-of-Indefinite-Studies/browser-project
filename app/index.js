@@ -58,7 +58,7 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json'),
-        { name: this.name, version: this.version }
+        { name: this.name, version: this.version, description: this.description }
       );
       this.fs.copy(
         this.templatePath('SpecRunner.html'),

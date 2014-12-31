@@ -49,5 +49,7 @@ describe('browser-project:app', function () {
     assert.fileContent('bower.json', /"name":\s+"test-project"/);
     assert.fileContent('bower.json', /"version":\s+"3.2.1"/);
     assert.fileContent('bower.json', /"license":\s+"MIT"/);
+    assert.fileContent('bower.json', /"description":\s+"test description"/);
+    assert.fileContent('bower.json', /"main":\s+"test-project.js"/);
   });
 });

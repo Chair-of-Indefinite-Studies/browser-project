@@ -2,6 +2,8 @@
   "name": "<%= name %>",
   "version": "<%= version %>",
   "license": "MIT",
+  "description": "<%= description %>",
+  "main": "<%= name %>.js",
   "ignore": [
     "**/.*",
     "node_modules",
